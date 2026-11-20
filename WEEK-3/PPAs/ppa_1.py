@@ -62,3 +62,69 @@ elif task =='skip_digits':
     print(output)
     
 
+'''
+2. Mapping
+swap_case_manual
+
+Read a string s.
+
+Without using Python's built-in swapcase() method, convert every lowercase letter to uppercase and every uppercase letter to lowercase.
+
+Non-alphabetic characters should remain unchanged.
+
+Print the converted string.
+
+Input
+
+    s : str
+'''
+if task == 'swap_case_manual':
+    s = input()
+    result = ''
+    for i in s:
+        if i.isalpha():
+            if i.isupper():
+                result+=i.lower()
+            elif i.islower():
+                result+=i.upper()
+        else:
+            result+=i
+    print(result)
+
+
+'''
+char_position
+
+Read a string s.
+
+Print every character along with its position (starting from 1) in the following format:
+
+1 : H
+2 : e
+3 : l
+...
+
+Input
+
+    s : str
+'''
+
+if task =='char_position':
+    s = input()
+    result = []
+    for i in range(len(s)):
+        result.append(f'{i+1} : {s[i]}')
+    output = '\n'.join(result)
+
+    print(output)
+
+
+
+
+
+    
+
+
+
+
+

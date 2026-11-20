@@ -9,8 +9,7 @@ Input:
 Expected output:
 [2, 4, 6, 8]
 '''
-
-task = input()
+task = input('enter your task:')
 
 if task == 'only_evens':
     int_list = list(map(int, input().split()))
@@ -137,3 +136,44 @@ if task =='filter by multiple condition':
     loi= list(map(int,input().split()))
     output = [x for x in loi if x>10 and x%3==0]
     print(output)
+
+
+'''
+Q8. Count Character Frequency
+Level 2 · 10 marks
+ Function-based
+
+
+Problem statement
+
+Write a function char_frequency(s) that accepts a string and returns a dictionary containing each character and its frequency.
+Examples
+Input	Expected output
+"banana"	{'b': 1, 'a': 3, 'n': 2}
+"hello"	{'h': 1, 'e': 1, 'l': 2, 'o': 1}
+"aaaa"	{'a': 4}
+"abc"	{'a': 1, 'b': 1, 'c': 1}
+
+Constraints
+- Case-sensitive.
+- Count spaces if present.
+- Return a dictionary.
+- You may use loops for this question.
+Your task
+'''
+
+if task =='char_frequency':
+    def char_frequency(s:str):
+        dic = {}
+        for i in s:
+            if i not in dic:
+                dic[i] = 1
+            else:
+                dic[i] += 1
+        return dic 
+
+    s = input()
+    print(char_frequency(s))
+    
+        
+            
