@@ -281,3 +281,156 @@ Paste your code when ready.
 if task =='remove_duplicates':
     def remove_duplicates(s:str):
         return set(s)
+
+
+'''
+Q9. Count Vowels and Consonants
+Level 2 · 10 marks
+ Function-based
+ Loops
+
+
+Problem statement
+
+Write a function count_vowels_consonants(s) that accepts a string and returns a dictionary containing:
+- Number of vowels.
+- Number of consonants.
+Ignore spaces, digits and special characters.
+
+Treat uppercase and lowercase letters equally.
+Sample test cases
+Input	Expected output
+"Hello World"	{'vowels': 3, 'consonants': 7}
+"PYTHON"	{'vowels': 1, 'consonants': 5}
+"AEIOU"	{'vowels': 5, 'consonants': 0}
+"123 !"	{'vowels': 0, 'consonants': 0}
+
+Your task
+def count_vowels_consonants(s):    # Your code
+
+
+'''
+if task == 'count_v_c':
+    s = input()
+    v=0
+    c=0
+    output = {}
+    for i in s:
+        if i.isalpha():
+            if i.lower() in 'aeiou':
+                v+=1
+            else:
+                c+=1
+
+    #         output['vowels'] = v 
+    #         output['consonants'] =c
+    # print(output) 
+    print({'vowels': v, 'consonants': c})
+
+    '''
+    Q10. Count Positive, Negative and Zero
+Level 2 · 10 marks
+ Function-based
+ Loops
+
+
+Write a function count_numbers(nums) that accepts a list of integers and returns a dictionary containing the count of:
+- Positive numbers
+- Negative numbers
+- Zeros
+Examples
+Input	Expected output
+[1, -2, 0, 3, -4, 0]	{'positive': 2, 'negative': 2, 'zero': 2}
+[1, 2, 3]	{'positive': 3, 'negative': 0, 'zero': 0}
+[-1, -5]	{'positive': 0, 'negative': 2, 'zero': 0}
+[]	{'positive': 0, 'negative': 0, 'zero': 0}
+
+Your task
+def count_numbers(nums):
+    # Your code
+
+
+
+Use a for loop and conditional statements.
+    '''
+
+if task =='count_numbers':
+    def count_numbers(nums:list):
+        p=0
+        n=0
+        z=0
+        for i in nums:
+            if i>0:
+                p+=1
+            elif i<0:
+                n+=1
+            else:
+                z+=1
+        return {'positive': p, 'negative': n, 'zeros': z}
+
+
+'''
+Q11. Even–Odd Sum
+Write a function even_odd_sum(nums) that accepts a list of integers and returns a dictionary containing:
+- even: Sum of all even numbers.
+- odd: Sum of all odd numbers.
+Examples:
+even_odd_sum([1, 2, 3, 4, 5, 6])# {'even': 12, 'odd': 9}even_odd_sum([2, 4, 6])# {'even': 12, 'odd': 0}even_odd_sum([])# {'even': 0, 'odd': 0}
+'''
+if task == 'function even_odd_sum':
+    def even_odd_sum(nums:list):
+        return {'even': sum([i for i in nums if i%2==0]), 'odd': sum([i for i in nums if i%2!=0])}
+    print(even_odd_sum([1, 2, 3, 4, 5, 6]))
+
+'''
+Next: Q12 – Filter Positive Numbers
+
+Write a function positive_numbers(nums) that returns a new list containing only positive numbers, preserving their original order.
+
+Example:
+positive_numbers([-2, 5, 0, 8, -1, 3])# [5, 8, 3]
+
+
+
+Try it yourself!
+'''
+
+if task == 'Filter Positive Numbers':
+    def positive_numbers(nums:list):
+        output = [i for i in nums if i>0]
+        return output 
+    
+
+'''
+Q13 – Square Every Number
+Write a function square_numbers(nums) that returns a new list containing the square of every number.
+
+Example:
+square_numbers([2, 3, 4, 5])# [4, 9, 16, 25]
+
+'''
+
+if task == 'Square Every Number':
+    def square_numbers(nums:list):
+        output = list(map(lambda i:i**2,nums))
+        return output 
+    nums = [2,8,10,15]
+    print(square_numbers(nums))
+
+'''
+Q14 – Filter and Transform Together
+Now let's increase the difficulty.
+
+Write a function double_positive(nums) that:
+1. Selects only positive numbers.
+2. Doubles each selected number.
+3. Returns the resulting list.
+Example:
+double_positive([-2, 3, 0, 5, -7, 4])# [6, 10, 8]
+
+'''
+if task =='Double Positive':
+    def double_positive(nums:list):
+        output = list(map(lambda x:x*2,[x for x in nums if x>0]))
+        return output 
+    print(double_positive([-2, 3, 0, 5, -7, 4]))
